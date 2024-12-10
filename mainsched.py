@@ -16,7 +16,7 @@ TODO
 
 
 class LayoutStates(Enum):
-    SCHEDULER_VIEW = (0,)
+    SCHEDULER_VIEW = 0
 
 
 def layout(layout_state: Tuple[LayoutStates, Window, Window]) -> None:
