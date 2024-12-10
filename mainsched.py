@@ -14,8 +14,9 @@ TODO
 - Handle resizing of window
 """
 
+
 class LayoutStates(Enum):
-    SCHEDULER_VIEW = 0,
+    SCHEDULER_VIEW = (0,)
 
 
 def layout(layout_state: Tuple[LayoutStates, Window, Window]) -> None:
@@ -37,7 +38,11 @@ def main(stdscr: curses.window) -> None:
     options_window = OptionsWindow()
 
     # Finite States
-    SCHEDULER_STATE: Tuple[LayoutStates, OptionsWindow, CalendarWindow] = (LayoutStates.SCHEDULER_VIEW, options_window, calendar_window)
+    SCHEDULER_STATE: Tuple[LayoutStates, OptionsWindow, CalendarWindow] = (
+        LayoutStates.SCHEDULER_VIEW,
+        options_window,
+        calendar_window,
+    )
 
     # Initial state
     LAYOUT_STATE = SCHEDULER_STATE
@@ -56,7 +61,7 @@ def main(stdscr: curses.window) -> None:
         # Input
         c = stdscr.getch()
 
-        if c == ord('q') or c == ord('Q'):
+        if c == ord("q") or c == ord("Q"):
             running = False
 
         if LAYOUT_STATE[0] == LayoutStates.SCHEDULER_VIEW:

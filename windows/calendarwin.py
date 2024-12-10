@@ -39,7 +39,7 @@ class CalendarWindow(Window):
     def select_next_row(self):
         if self.selected < self.num_content_rows - 1:
             self.selected += 1
-    
+
     def select_previous_row(self):
         if self.selected > 0:
             self.selected -= 1
