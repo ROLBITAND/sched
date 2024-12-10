@@ -1,6 +1,6 @@
 import curses
 import datetime
-from typing import List
+from typing import Any
 
 from windows.window import Window
 
@@ -27,7 +27,7 @@ class CalendarRow(Window):
 
 
 class CalendarWindow(Window):
-    data: any
+    data: Any
     selected: int = 0
 
     @property

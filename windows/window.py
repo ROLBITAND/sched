@@ -23,5 +23,5 @@ class Window:
         self.curses_window.resize(lines, cols)
         self.curses_window.mvwin(y, x)
 
-    def draw() -> None:
-        raise NotImplemented("Only concrete Window classes implement draw")
+    def draw(self) -> None:
+        raise NotImplemented
